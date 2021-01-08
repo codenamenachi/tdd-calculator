@@ -41,4 +41,17 @@ class AdditionTest {
         int result = addition.add(testCase);
         assert result  == 3;
     }
+
+    // test 4
+    @Test
+    void addNumbersTest_MoreThanTwoNums(){
+        testCase = "1,2,1,3,2";
+        int result = 0;
+        try {
+            result = addition.add(testCase);
+        } catch (Exception e) {
+            assert false;
+        }
+        assert result  == 9;
+    }
 }
