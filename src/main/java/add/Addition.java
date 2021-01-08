@@ -5,12 +5,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class Addition {
 
     public int add(String numbers){
-        
-        String delimiter = "[,\\n]";
+
+        // For test 6
+        String delimiter = numbers.split("\\n")[0] != null ? numbers.split("\\n")[0] : ",";
         int sum = 0;
+        String negetives = "";
         for(String n : numbers.split(delimiter)){
-            sum+=Integer.parseInt(n);
+            int x = Integer.parseInt(n);
+            if (x >= 0)
+                sum += Integer.parseInt(n);
+            else
+                negetives+=", "+x;
         }
+        if(!negetives.isEmpty())
+            throw new Exception("negatives not allowed - "+negetives);
 
         return sum;
     }
