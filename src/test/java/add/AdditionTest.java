@@ -54,4 +54,17 @@ class AdditionTest {
         }
         assert result  == 9;
     }
+
+    // test 5
+    @Test
+    void addNumbersTest_DiffDelimiters(){
+        testCase = "1,2\n1";
+        int result = 0;
+        try {
+            result = addition.add(testCase);
+        } catch (Exception e) {
+            fail(e.getMessage());
+        }
+        assert result  == 4;
+    }
 }
