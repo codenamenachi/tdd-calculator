@@ -80,4 +80,17 @@ class AdditionTest {
         }
         assert false;
     }
+
+    // test 7
+    @Test
+    void addNumbersTest_NumbersGreaterThan1000(){
+        testCase = "1,2, 1003";
+        int result = 0;
+        try {
+            result = addition.add(testCase);
+        } catch (Exception e) {
+            fail();
+        }
+        assertTrue(result == 6);
+    }
 }
