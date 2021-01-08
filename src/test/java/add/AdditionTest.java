@@ -67,4 +67,17 @@ class AdditionTest {
         }
         assert result  == 4;
     }
+
+    // test 6
+    @Test
+    void addNumbersTest_Negetives(){
+        testCase = "1,-2, -3";
+        int result = 0;
+        try {
+            result = addition.add(testCase);
+        } catch (Exception e) {
+            assert e.getMessage().equalsIgnoreCase("negatives not allowed - -2, -3");
+        }
+        assert false;
+    }
 }
